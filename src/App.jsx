@@ -1,9 +1,19 @@
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
+//Layouts
+import LayoutAuth from "./layouts/LayoutAuth"
+//Pages Auth
+import Login from "./pages/auth/Login"
+
+function App() {
   return (
-    <div className="bg-red-400">
-      Hola Mundo
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LayoutAuth/>}>
+          <Route index element={<Login />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
